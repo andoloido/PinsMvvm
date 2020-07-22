@@ -12,7 +12,9 @@ android {
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
-
+        ndk {
+            abiFilters "armeabi-v7a"
+        }
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -51,7 +53,6 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
     implementation "androidx.navigation:navigation-fragment-ktx:2.3.0"
     implementation "androidx.navigation:navigation-ui-ktx:2.3.0"
-    implementation 'androidx.navigation:navigation-fragment:2.3.0'
     implementation "androidx.paging:paging-runtime:2.1.2"
     implementation "androidx.recyclerview:recyclerview:1.1.0"
     implementation "androidx.room:room-runtime:2.2.5"

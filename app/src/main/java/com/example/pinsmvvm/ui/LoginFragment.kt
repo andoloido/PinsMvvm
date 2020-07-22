@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.observe
 import com.example.pinsmvvm.R
+import com.example.pinsmvvm.app.utils.toast
 import com.example.pinsmvvm.databinding.FragmentLoginBinding
 import com.example.pinsmvvm.vm.LoginViewModel
 
@@ -35,13 +36,10 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         mViewModel.name.observe(viewLifecycleOwner) {
-            Toast.makeText(
-                activity,
-                "${mViewModel.name.value} + ${mViewModel.password.value}",
-                Toast.LENGTH_SHORT
-            )
-                .show()
+            toast("${mViewModel.name.value} + ${mViewModel.password.value}")
         }
-        mViewModel.textToObserve.set("123")
+        mViewModel.loginResult.observe(viewLifecycleOwner) {
+            toast(it.toString())
+        }
     }
 }
