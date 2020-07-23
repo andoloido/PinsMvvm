@@ -8,7 +8,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import java.util.concurrent.TimeUnit
 
 object OkHttpTools {
-    const val HTTP_CONNECT_TIMEOUT = 10 * 1000L
+    private const val HTTP_CONNECT_TIMEOUT = 10 * 1000L
 
     val okHttpClient: OkHttpClient = OkHttpClient.Builder().apply {
         connectTimeout(HTTP_CONNECT_TIMEOUT, TimeUnit.MILLISECONDS)
