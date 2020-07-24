@@ -20,6 +20,6 @@ object RetrofitTools {
     }
 }
 
-val apiService: ApiService by lazy(mode = LazyThreadSafetyMode.SYNCHRONIZED) {
-    RetrofitTools.getApi(ApiService::class.java)
+val loginService: LoginService by lazy(mode = LazyThreadSafetyMode.SYNCHRONIZED) {
+    RetrofitTools.getApi(LoginService::class.java)
 }

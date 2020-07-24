@@ -1,28 +1,16 @@
 package com.example.pinsmvvm.vm
 
-import android.widget.Toast
 import androidx.databinding.ObservableField
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import com.example.pinsmvvm.app.network.HttpResponse
-import com.example.pinsmvvm.app.network.apiService
-import kotlinx.coroutines.launch
+import androidx.lifecycle.*
+import com.example.pinsmvvm.app.base.BaseViewModel
+import com.example.pinsmvvm.data.model.LoginRes
+import com.example.pinsmvvm.data.repo.LoginRepo
 
-class LoginViewModel : ViewModel() {
-    val name = MutableLiveData<String>()
-    val password = MutableLiveData<String>()
+class LoginViewModel : BaseViewModel() {
+    private val loginRepo = LoginRepo.getInstance()
 
-    val loginResult = MutableLiveData<Boolean>()
-    fun login() {
-        viewModelScope.launch {
-            runCatching {
-                apiService.login3(mapOf("username" to "18525377701", "vcode" to "123456"))
-            }.onSuccess {
-                loginResult.value = true
-            }.onFailure {
-                loginResult.value = false
-            }
-        }
-    }
+    val name = ObservableField<String>()
+    val password = ObservableField<String>()
+
+    fun login(): LiveData<LoginRes> = request { loginRepo.login(name.get()!!, password.get()!!) }
 }

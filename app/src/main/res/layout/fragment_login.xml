@@ -8,6 +8,8 @@
         <variable
             name="loginVM"
             type="com.example.pinsmvvm.vm.LoginViewModel" />
+
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -39,10 +41,10 @@
             app:layout_constraintTop_toBottomOf="@+id/nameEt" />
 
         <Button
+            android:id="@+id/loginBt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
-            android:onClick="@{() -> loginVM.login()}"
             android:text="login"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

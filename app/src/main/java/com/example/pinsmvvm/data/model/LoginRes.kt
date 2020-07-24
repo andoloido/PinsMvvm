@@ -1,4 +1,4 @@
-package com.example.pinsmvvm.data
+package com.example.pinsmvvm.data.model
 
 data class LoginRes(
     val applyed_card_status: Int,
