@@ -20,9 +20,6 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
     override fun getLayoutRes(): Int = R.layout.fragment_login
 
     override fun initView() {
-        if (Setting.authorization.isNotEmpty()) {
-            findNavController().navigate(R.id.action_loginFragment_to_mainFragment)
-        }
         loginBt.setOnClickListener {
             if (mViewModel.name.get().isNullOrEmpty()) {
                 toast(getString(R.string.name_null_alert))
