@@ -1,18 +1,14 @@
 package com.example.pinsmvvm.ui.doctor
 
-import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.pinsmvvm.R
 import com.example.pinsmvvm.app.base.BaseFragment
 import com.example.pinsmvvm.app.base.BaseViewModel
-import com.example.pinsmvvm.app.base.Constant
 import com.example.pinsmvvm.app.config.Setting
 import com.example.pinsmvvm.databinding.FragmentDoctorListBinding
 import com.example.pinsmvvm.vm.DoctorListViewModel
-import com.example.pinsmvvm.vm.LoginViewModel
 
 class DoctorListFragment : BaseFragment<FragmentDoctorListBinding>() {
     private val mViewModel by viewModels<DoctorListViewModel>()

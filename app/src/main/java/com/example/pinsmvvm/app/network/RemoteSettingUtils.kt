@@ -1,7 +1,5 @@
 package com.example.pinsmvvm.app.network
 
-import kotlin.properties.Delegates
-
 object RemoteSettingUtils {
     var testMode: Boolean = false
     lateinit var updateInfoUrl: String
@@ -12,21 +10,8 @@ object RemoteSettingUtils {
     lateinit var sensorUrl: String
 
     init {
-        releaseConfig()
         testConfig()
         devConfig()
-    }
-
-    private fun releaseConfig() {
-        testMode = false
-        updateInfoUrl =
-            "http://pins-app-resources.oss-cn-qingdao.aliyuncs.com/publish/pinslife/com.pinsmedical.pinslife2"
-        mainUrl = "https://pinslife.pinsmedical.com/"
-        remotectrlUrl = "https://pinsmedical.com:446"
-        agoraAppId = "6cd5242432e24cf799d4e7232ae16e57"
-        remotectrlMqttTag = "pinsrls"
-        sensorUrl =
-            "https://pinchijiankang.datasink.sensorsdata.cn/sa?project=production&token=123dc90c4fa7cb5e"
     }
 
     private fun testConfig() {
