@@ -1,6 +1,6 @@
 package com.example.pinsmvvm.data.model
 
-data class LoginRes(
+data class LoginBean(
     val applyed_card_status: Int,
     val appointment_id: Int,
     val contact_address: String,

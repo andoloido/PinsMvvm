@@ -14,6 +14,20 @@ import java.util.concurrent.TimeUnit
 object OkHttpTools {
     private const val HTTP_CONNECT_TIMEOUT = 10 * 1000L
 
+    private val headerInterceptor = object : HeaderInterceptor() {
+        override val header: Map<String, String>
+            get() {
+                val map = hashMapOf<String, String>()
+                map["Content-Type"] = "application/json"
+                map["pins-source"] = Constant.HttpConstants.CODE_SOURCE_ANDROID.toString()
+                map["pins-app-version"] = BuildConfig.VERSION_NAME
+                if (deviceId.isNotEmpty()) map["pins-device"] = deviceId
+                map["pins-timestamp"] = System.currentTimeMillis().toString()
+                if (authorization.isNotEmpty()) map["pins-device"] = authorization
+                return map
+            }
+    }
+
     val okHttpClient: OkHttpClient = OkHttpClient.Builder().apply {
         addInterceptor(headerInterceptor)
         connectTimeout(HTTP_CONNECT_TIMEOUT, TimeUnit.MILLISECONDS)
@@ -23,23 +37,11 @@ object OkHttpTools {
         if (BuildConfig.DEBUG) {
             addInterceptor(HttpLoggingInterceptor(object : HttpLoggingInterceptor.Logger {
                 override fun log(message: String) {
-                    Log.e("RetrofitLog", message)
+                    Log.i("RetrofitLog", message)
                 }
             }).setLevel(HttpLoggingInterceptor.Level.BODY))
         }
     }.build()
 
-    private val headerInterceptor = object : HeaderInterceptor() {
-        override val header: Map<String, String>
-            get() {
-                val map = hashMapOf<String, String>()
-                map["Content-Type"] = "application/json"
-                map["pins-source"] = Constant.HttpConstants.CODE_SOURCE_ANDROID.toString()
-                map["pins-app-version"] = BuildConfig.VERSION_NAME
-                map["pins-device"] = deviceId
-                map["pins-timestamp"] = System.currentTimeMillis().toString()
-                map["Authorization"] = authorization
-                return map
-            }
-    }
+
 }

@@ -4,11 +4,11 @@ import android.app.Application
 
 class App : Application() {
     companion object {
-        lateinit var instance: App
+        lateinit var application: App
     }
 
     override fun onCreate() {
         super.onCreate()
-        instance = this
+        application = this
     }
 }

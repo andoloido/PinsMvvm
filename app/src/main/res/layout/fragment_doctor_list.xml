@@ -3,6 +3,9 @@
 
     <data>
 
+        <variable
+            name="doctorListVM"
+            type="com.example.pinsmvvm.vm.DoctorListViewModel" />
     </data>
 
     <LinearLayout
@@ -10,7 +13,7 @@
         android:layout_height="match_parent">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
+            android:id="@+id/doctorListRv"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>

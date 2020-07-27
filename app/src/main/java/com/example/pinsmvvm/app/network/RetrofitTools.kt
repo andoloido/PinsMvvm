@@ -23,3 +23,7 @@ object RetrofitTools {
 val loginService: LoginService by lazy(mode = LazyThreadSafetyMode.SYNCHRONIZED) {
     RetrofitTools.getApi(LoginService::class.java)
 }
+
+val doctorService: DoctorService by lazy(mode = LazyThreadSafetyMode.SYNCHRONIZED) {
+    RetrofitTools.getApi(DoctorService::class.java)
+}

@@ -16,7 +16,7 @@ class SpUtil<T>(private val key: String, private val defaultValue: T) :
         private const val SHARE_PRE_NAME = "PINS_MVVM"
 
         private val mPreferences: SharedPreferences by lazy {
-            App.instance.getSharedPreferences(
+            App.application.getSharedPreferences(
                 SHARE_PRE_NAME,
                 Context.MODE_PRIVATE
             )
