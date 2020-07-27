@@ -38,12 +38,4 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
     override fun initData() {
         mBinding.loginVM = mViewModel
     }
-
-    override fun showLoading() {
-        toast("加载中")
-    }
-
-    override fun dismissLoading() {
-        toast("加载完成")
-    }
 }

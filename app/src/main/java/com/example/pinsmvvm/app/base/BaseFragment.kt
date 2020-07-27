@@ -53,11 +53,7 @@ abstract class BaseFragment<DB : ViewDataBinding> : Fragment() {
     override fun onResume() {
         super.onResume()
         lazyLoadData()
-    }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        mBinding.unbind()
     }
 
     private fun lazyLoadData() {
