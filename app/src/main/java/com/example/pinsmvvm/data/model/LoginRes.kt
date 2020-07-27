@@ -30,5 +30,6 @@ data class LoginRes(
     val user_name: String,
     val user_qrcode_url: Any,
     val user_real_id: Int,
-    val user_telephone: String
+    val user_telephone: String,
+    val patient_id: String
 )

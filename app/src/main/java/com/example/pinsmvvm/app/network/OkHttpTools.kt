@@ -2,6 +2,10 @@ package com.example.pinsmvvm.app.network
 
 import android.util.Log
 import com.example.pinsmvvm.BuildConfig
+import com.example.pinsmvvm.app.base.Constant
+import com.example.pinsmvvm.app.config.Setting.authorization
+import com.example.pinsmvvm.app.config.Setting.deviceId
+import com.example.pinsmvvm.app.network.interceptors.HeaderInterceptor
 import okhttp3.OkHttpClient
 import okhttp3.Protocol
 import okhttp3.logging.HttpLoggingInterceptor
@@ -11,6 +15,7 @@ object OkHttpTools {
     private const val HTTP_CONNECT_TIMEOUT = 10 * 1000L
 
     val okHttpClient: OkHttpClient = OkHttpClient.Builder().apply {
+        addInterceptor(headerInterceptor)
         connectTimeout(HTTP_CONNECT_TIMEOUT, TimeUnit.MILLISECONDS)
         readTimeout(HTTP_CONNECT_TIMEOUT, TimeUnit.MILLISECONDS)
         writeTimeout(HTTP_CONNECT_TIMEOUT, TimeUnit.MILLISECONDS)
@@ -23,4 +28,18 @@ object OkHttpTools {
             }).setLevel(HttpLoggingInterceptor.Level.BODY))
         }
     }.build()
+
+    private val headerInterceptor = object : HeaderInterceptor() {
+        override val header: Map<String, String>
+            get() {
+                val map = hashMapOf<String, String>()
+                map["Content-Type"] = "application/json"
+                map["pins-source"] = Constant.HttpConstants.CODE_SOURCE_ANDROID.toString()
+                map["pins-app-version"] = BuildConfig.VERSION_NAME
+                map["pins-device"] = deviceId
+                map["pins-timestamp"] = System.currentTimeMillis().toString()
+                map["Authorization"] = authorization
+                return map
+            }
+    }
 }

@@ -8,6 +8,24 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.pinsmvvm.ui.LoginFragment"
-        tools:layout="@layout/fragment_login"
-        android:label="LoginFragment" />
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.pinsmvvm.ui.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_doctorListFragment"
+            app:destination="@id/doctorListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/doctorListFragment"
+        android:name="com.example.pinsmvvm.ui.DoctorListFragment"
+        android:label="DoctorListFragment"
+        tools:layout="@layout/fragment_doctor_list" />
 </navigation>
