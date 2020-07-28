@@ -1,36 +1,28 @@
 package com.example.pinsmvvm.ui.doctor
 
 import android.content.Context
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
-import androidx.recyclerview.widget.RecyclerView
+import com.chad.library.adapter.base.BaseQuickAdapter
+import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.example.pinsmvvm.R
 import com.example.pinsmvvm.data.model.InquiryDataBean
 import com.example.pinsmvvm.databinding.ItemDoctorBinding
 
 class DoctorAdapter(private val mContext: Context) :
-    ListAdapter<InquiryDataBean, RecyclerView.ViewHolder>(DiffCallback()) {
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        val binding = DataBindingUtil.inflate<ItemDoctorBinding>(
-            LayoutInflater.from(mContext),
-            R.layout.item_doctor,
-            parent,
-            false
-        )
-        return ViewHolder(binding.root)
+    BaseQuickAdapter<InquiryDataBean, BaseViewHolder>(R.layout.item_doctor) {
+    init {
+        setDiffCallback(DiffCallback())
     }
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+    override fun onItemViewHolderCreated(viewHolder: BaseViewHolder, viewType: Int) {
+        DataBindingUtil.bind<ItemDoctorBinding>(viewHolder.itemView)
+    }
+
+    override fun convert(holder: BaseViewHolder, item: InquiryDataBean) {
         val binding = DataBindingUtil.getBinding<ItemDoctorBinding>(holder.itemView)
-        binding?.inquiryData = getItem(position)
+        binding?.inquiryData = item
     }
-
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
     class DiffCallback : DiffUtil.ItemCallback<InquiryDataBean>() {
         override fun areItemsTheSame(

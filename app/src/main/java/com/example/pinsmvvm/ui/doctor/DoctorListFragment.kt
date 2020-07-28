@@ -32,12 +32,10 @@ class DoctorListFragment : BaseFragment<FragmentDoctorListBinding>() {
     override fun initData() {
         mBinding.doctorListVM = mViewModel
         mViewModel.getDoctorList(Setting.userId, 0).observe(this, Observer {
-            var list = it.inquiry_data.toMutableList()
+            val list = it.inquiry_data.toMutableList()
             list.addAll(list)
-            list.addAll(list)
-            list.addAll(list)
-            list.addAll(list)
-            mAdapter.submitList(list)
+            mAdapter.addData(list)
         })
+        mAdapter.setEmptyView(R.layout.view_empty)
     }
 }
