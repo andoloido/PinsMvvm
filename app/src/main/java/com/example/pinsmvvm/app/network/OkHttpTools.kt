@@ -23,7 +23,7 @@ object OkHttpTools {
                 map["pins-app-version"] = BuildConfig.VERSION_NAME
                 if (deviceId.isNotEmpty()) map["pins-device"] = deviceId
                 map["pins-timestamp"] = System.currentTimeMillis().toString()
-                if (authorization.isNotEmpty()) map["pins-device"] = authorization
+                if (authorization.isNotEmpty()) map["Authorization"] = authorization
                 return map
             }
     }

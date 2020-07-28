@@ -1,7 +1,5 @@
 package com.example.pinsmvvm.app.base
 
-import android.util.Base64
-
 object Constant {
 
     object Account {

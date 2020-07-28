@@ -8,7 +8,7 @@
             type="com.example.pinsmvvm.vm.DoctorListViewModel" />
     </data>
 
-    <LinearLayout
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -16,5 +16,5 @@
             android:id="@+id/doctorListRv"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
-    </LinearLayout>
+    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
 </layout>

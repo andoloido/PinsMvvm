@@ -12,6 +12,7 @@ interface LoginService {
 }
 
 interface DoctorService {
+    //fuck retrofit https://github.com/square/retrofit/issues/3275
     @JvmSuppressWildcards
     @POST("api2/inquiry/getOtherDoctorList")
     suspend fun getOtherDoctorList(@Body map: Map<String, Any>): HttpResponse<OtherDoctorListBean>
