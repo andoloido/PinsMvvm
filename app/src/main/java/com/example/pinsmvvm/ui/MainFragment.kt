@@ -15,8 +15,11 @@ class MainFragment : BaseFragment<FragmentMainBinding>() {
     override fun getLayoutRes(): Int = R.layout.fragment_main
 
     override fun initView() {
-        jumpToListBt.setOnClickListener {
+        jumpToDoctorListBt.setOnClickListener {
             findNavController().navigate(R.id.action_mainFragment_to_doctorListFragment)
+        }
+        jumpToOrderListBt.setOnClickListener {
+            findNavController().navigate(R.id.action_mainFragment_to_orderListFragment)
         }
         logoutBt.setOnClickListener {
             SpUtil.clear()

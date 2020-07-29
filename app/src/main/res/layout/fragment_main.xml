@@ -11,12 +11,20 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/jumpToListBt"
+            android:id="@+id/jumpToDoctorListBt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="100dp"
-            android:text="jump to list" />
+            android:text="jump to doctor list" />
+
+        <Button
+            android:id="@+id/jumpToOrderListBt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="100dp"
+            android:text="jump to order list" />
 
         <Button
             android:id="@+id/logoutBt"

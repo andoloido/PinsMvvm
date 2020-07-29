@@ -1,5 +1,8 @@
 package com.example.pinsmvvm.app.network
 
+import com.example.pinsmvvm.data.network.DoctorService
+import com.example.pinsmvvm.data.network.LoginService
+import com.example.pinsmvvm.data.network.OrderService
 import com.google.gson.GsonBuilder
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -26,4 +29,8 @@ val loginService: LoginService by lazy(mode = LazyThreadSafetyMode.SYNCHRONIZED)
 
 val doctorService: DoctorService by lazy(mode = LazyThreadSafetyMode.SYNCHRONIZED) {
     RetrofitTools.getApi(DoctorService::class.java)
+}
+
+val orderService: OrderService by lazy(mode = LazyThreadSafetyMode.SYNCHRONIZED) {
+    RetrofitTools.getApi(OrderService::class.java)
 }

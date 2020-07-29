@@ -1,6 +1,6 @@
 package com.example.pinsmvvm.data.repo
 
-import com.example.pinsmvvm.app.network.LoginService
+import com.example.pinsmvvm.data.network.LoginService
 import com.example.pinsmvvm.app.network.loginService
 
 class LoginRepo private constructor(private val loginService: LoginService) {

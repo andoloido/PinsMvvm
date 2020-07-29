@@ -13,5 +13,4 @@ class DoctorListViewModel : BaseViewModel() {
 
     fun getDoctorList(patientId: String, type: Int): LiveData<OtherDoctorListBean> =
         request { doctorRepo.getDoctorList(patientId, type) }
-
 }

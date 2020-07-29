@@ -5,16 +5,17 @@
     <data>
 
         <variable
-            name="doctorListVM"
-            type="com.example.pinsmvvm.vm.DoctorListViewModel" />
+            name="orderListVM"
+            type="com.example.pinsmvvm.vm.OrderListViewModel" />
     </data>
 
     <com.scwang.smart.refresh.layout.SmartRefreshLayout
+        android:id="@+id/refreshLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/doctorListRv"
+            android:id="@+id/orderListRv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:itemCount="10"

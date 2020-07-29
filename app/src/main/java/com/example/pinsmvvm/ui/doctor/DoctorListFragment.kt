@@ -23,7 +23,7 @@ class DoctorListFragment : BaseFragment<FragmentDoctorListBinding>() {
 
     override fun initView() {
         mAdapter = DoctorAdapter(mActivity)
-        mBinding.apply {
+        mBinding.run {
             doctorListRv.adapter = mAdapter
             doctorListRv.layoutManager = LinearLayoutManager(mActivity)
         }
@@ -32,9 +32,7 @@ class DoctorListFragment : BaseFragment<FragmentDoctorListBinding>() {
     override fun initData() {
         mBinding.doctorListVM = mViewModel
         mViewModel.getDoctorList(Setting.userId, 0).observe(this, Observer {
-            val list = it.inquiry_data.toMutableList()
-            list.addAll(list)
-            mAdapter.addData(list)
+            mAdapter.addData(it.inquiry_data)
         })
         mAdapter.setEmptyView(R.layout.view_empty)
     }

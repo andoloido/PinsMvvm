@@ -1,6 +1,6 @@
 package com.example.pinsmvvm.data.repo
 
-import com.example.pinsmvvm.app.network.DoctorService
+import com.example.pinsmvvm.data.network.DoctorService
 import com.example.pinsmvvm.app.network.HttpResponse
 import com.example.pinsmvvm.app.network.doctorService
 import com.example.pinsmvvm.data.model.OtherDoctorListBean
