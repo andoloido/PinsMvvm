@@ -67,7 +67,7 @@ abstract class BaseFragment<DB : ViewDataBinding> : Fragment() {
         this.getViewModel().let { baseViewModel ->
             baseViewModel.mStateLiveData.observe(this, Observer { stateActionState ->
                 when (stateActionState) {
-                    LoadState -> showLoading()
+                    RequestState -> showLoading()
                     SuccessState -> dismissLoading()
                     is ErrorState -> {
                         dismissLoading()

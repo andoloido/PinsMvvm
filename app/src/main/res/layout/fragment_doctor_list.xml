@@ -4,9 +4,6 @@
 
     <data>
 
-        <variable
-            name="doctorListVM"
-            type="com.example.pinsmvvm.vm.DoctorListViewModel" />
     </data>
 
     <com.scwang.smart.refresh.layout.SmartRefreshLayout

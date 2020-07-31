@@ -30,7 +30,6 @@ class DoctorListFragment : BaseFragment<FragmentDoctorListBinding>() {
     }
 
     override fun initData() {
-        mBinding.doctorListVM = mViewModel
         mViewModel.getDoctorList(Setting.userId, 0).observe(this, Observer {
             mAdapter.addData(it.inquiry_data)
         })

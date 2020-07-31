@@ -21,6 +21,10 @@ class MainFragment : BaseFragment<FragmentMainBinding>() {
         jumpToOrderListBt.setOnClickListener {
             findNavController().navigate(R.id.action_mainFragment_to_orderListFragment)
         }
+        jumpToPageOrderBt.setOnClickListener {
+            findNavController().navigate(R.id.action_mainFragment_to_pageOrderFragment)
+
+        }
         logoutBt.setOnClickListener {
             SpUtil.clear()
             findNavController().navigate(R.id.action_mainFragment_to_loginFragment)

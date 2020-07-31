@@ -4,9 +4,6 @@
 
     <data>
 
-        <variable
-            name="orderListVM"
-            type="com.example.pinsmvvm.vm.OrderListViewModel" />
     </data>
 
     <com.scwang.smart.refresh.layout.SmartRefreshLayout
@@ -15,7 +12,7 @@
         android:layout_height="match_parent">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/orderListRv"
+            android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:itemCount="10"

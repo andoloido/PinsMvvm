@@ -23,5 +23,5 @@ interface DoctorService {
 interface OrderService {
     @JvmSuppressWildcards
     @POST("api3/order/patient/getAllList")
-    suspend fun getAllList(@Body map: Map<String, Any>): HttpResponse<List<OrderBean>>
+    suspend fun getAllList(@Body map: Map<String, Any?>): HttpResponse<List<OrderBean>>
 }
