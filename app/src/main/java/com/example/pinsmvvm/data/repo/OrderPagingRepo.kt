@@ -29,7 +29,7 @@ class OrderPagingRepo(private val orderService: OrderService) {
         map["type"] = 0
         map["size"] = 10
         map["module"] = 501
-        return Pager(config = PagingConfig(pageSize = 10, enablePlaceholders = false, initialLoadSize = 1, prefetchDistance = 1),
+        return Pager(config = PagingConfig(pageSize = 10, enablePlaceholders = false, initialLoadSize = 20, prefetchDistance = 10),
             pagingSourceFactory = { OrderPagingSource(orderService, map) }).flow
     }
 }

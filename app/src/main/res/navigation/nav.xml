@@ -33,6 +33,9 @@
         <action
             android:id="@+id/action_mainFragment_to_pageOrderFragment"
             app:destination="@id/pageOrderFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_mediatorOrderFragment"
+            app:destination="@id/mediatorOrderFragment" />
     </fragment>
     <fragment
         android:id="@+id/doctorListFragment"
@@ -59,5 +62,10 @@
         android:id="@+id/pageOrderFragment"
         android:name="com.example.pinsmvvm.ui.page.PageOrderFragment"
         android:label="PageOrderFragment"
+        tools:layout="@layout/layout_common_list" />
+    <fragment
+        android:id="@+id/mediatorOrderFragment"
+        android:name="com.example.pinsmvvm.ui.mediator.MediatorOrderFragment"
+        android:label="MediatorOrderFragment"
         tools:layout="@layout/layout_common_list" />
 </navigation>

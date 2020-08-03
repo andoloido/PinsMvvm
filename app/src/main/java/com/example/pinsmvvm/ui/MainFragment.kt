@@ -23,7 +23,9 @@ class MainFragment : BaseFragment<FragmentMainBinding>() {
         }
         jumpToPageOrderBt.setOnClickListener {
             findNavController().navigate(R.id.action_mainFragment_to_pageOrderFragment)
-
+        }
+        jumpToMediatorOrderBt.setOnClickListener {
+            findNavController().navigate(R.id.action_mainFragment_to_mediatorOrderFragment)
         }
         logoutBt.setOnClickListener {
             SpUtil.clear()
