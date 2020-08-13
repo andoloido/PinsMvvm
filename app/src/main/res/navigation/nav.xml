@@ -3,16 +3,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav"
-    app:startDestination="@id/launchFragment">
-
+    app:startDestination="@id/mainFragment">
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.pinsmvvm.ui.login.LoginFragment"
         android:label="LoginFragment"
         tools:layout="@layout/fragment_login">
         <action
-            android:id="@+id/action_loginFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
+            android:id="@+id/action_loginFragment_to_listTestFragment"
+            app:destination="@id/listTestFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/launchFragment"
+        android:name="com.example.pinsmvvm.ui.LaunchFragment"
+        android:label="LaunchFragment">
+        <action
+            android:id="@+id/action_launchFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_launchFragment_to_listTestFragment"
+            app:destination="@id/listTestFragment" />
     </fragment>
     <fragment
         android:id="@+id/mainFragment"
@@ -22,11 +32,6 @@
         <action
             android:id="@+id/action_mainFragment_to_doctorListFragment"
             app:destination="@id/doctorListFragment" />
-        <action
-            android:id="@+id/action_mainFragment_to_loginFragment"
-            app:destination="@id/loginFragment"
-            app:popUpTo="@id/loginFragment"
-            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_mainFragment_to_orderListFragment"
             app:destination="@id/orderListFragment" />
@@ -38,34 +43,28 @@
             app:destination="@id/mediatorOrderFragment" />
     </fragment>
     <fragment
+        android:id="@+id/listTestFragment"
+        android:name="com.example.pinsmvvm.ui.list.ListTestFragment"
+        android:label="ListTestFragment"
+        tools:layout="@layout/fragment_list_test" />
+    <fragment
         android:id="@+id/doctorListFragment"
-        android:name="com.example.pinsmvvm.ui.doctor.DoctorListFragment"
+        android:name="com.example.pinsmvvm.ui.list.doctor.DoctorListFragment"
         android:label="DoctorListFragment"
         tools:layout="@layout/fragment_doctor_list" />
     <fragment
-        android:id="@+id/launchFragment"
-        android:name="com.example.pinsmvvm.ui.LaunchFragment"
-        android:label="LaunchFragment">
-        <action
-            android:id="@+id/action_launchFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
-        <action
-            android:id="@+id/action_launchFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/orderListFragment"
-        android:name="com.example.pinsmvvm.ui.order.OrderListFragment"
-        android:label="OrderListFragment"
+        android:id="@+id/mediatorOrderFragment"
+        android:name="com.example.pinsmvvm.ui.list.mediator.MediatorOrderFragment"
+        android:label="MediatorOrderFragment"
         tools:layout="@layout/layout_common_list" />
     <fragment
         android:id="@+id/pageOrderFragment"
-        android:name="com.example.pinsmvvm.ui.page.PageOrderFragment"
+        android:name="com.example.pinsmvvm.ui.list.page.PageOrderFragment"
         android:label="PageOrderFragment"
         tools:layout="@layout/layout_common_list" />
     <fragment
-        android:id="@+id/mediatorOrderFragment"
-        android:name="com.example.pinsmvvm.ui.mediator.MediatorOrderFragment"
-        android:label="MediatorOrderFragment"
+        android:id="@+id/orderListFragment"
+        android:name="com.example.pinsmvvm.ui.list.order.OrderListFragment"
+        android:label="OrderListFragment"
         tools:layout="@layout/layout_common_list" />
 </navigation>

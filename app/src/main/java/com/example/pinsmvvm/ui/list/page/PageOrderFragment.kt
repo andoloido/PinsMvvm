@@ -1,4 +1,4 @@
-package com.example.pinsmvvm.ui.page
+package com.example.pinsmvvm.ui.list.page
 
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope

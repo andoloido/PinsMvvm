@@ -1,6 +1,5 @@
-package com.example.pinsmvvm.ui.order
+package com.example.pinsmvvm.ui.list.order
 
-import android.text.Layout
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -12,7 +11,6 @@ import com.example.pinsmvvm.app.utils.toast
 import com.example.pinsmvvm.data.model.OrderBean
 import com.example.pinsmvvm.databinding.LayoutCommonListBinding
 import com.example.pinsmvvm.vm.OrderListViewModel
-import kotlinx.android.synthetic.main.layout_common_list.*
 
 class OrderListFragment : BaseFragment<LayoutCommonListBinding>() {
     private val mViewModel by viewModels<OrderListViewModel>()

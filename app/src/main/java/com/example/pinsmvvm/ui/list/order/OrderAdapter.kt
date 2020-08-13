@@ -1,4 +1,4 @@
-package com.example.pinsmvvm.ui.order
+package com.example.pinsmvvm.ui.list.order
 
 import android.content.Context
 import androidx.databinding.DataBindingUtil

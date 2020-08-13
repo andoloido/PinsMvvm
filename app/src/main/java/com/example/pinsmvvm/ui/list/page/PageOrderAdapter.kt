@@ -1,4 +1,4 @@
-package com.example.pinsmvvm.ui.mediator
+package com.example.pinsmvvm.ui.list.page
 
 import android.view.LayoutInflater
 import android.view.View
@@ -11,7 +11,7 @@ import com.example.pinsmvvm.R
 import com.example.pinsmvvm.data.model.OrderBean
 import com.example.pinsmvvm.databinding.ItemOrderBinding
 
-class MediatorOrderAdapter :
+class PageOrderAdapter :
     PagingDataAdapter<OrderBean, RecyclerView.ViewHolder>(ORDER_BEAN_COMPARATOR) {
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val binding = DataBindingUtil.bind<ItemOrderBinding>(holder.itemView)
@@ -20,7 +20,7 @@ class MediatorOrderAdapter :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_order, parent, false)
-        return MediatorOrderViewHolder(view)
+        return PageOrderViewHolder(view)
     }
 
     companion object {
@@ -34,4 +34,4 @@ class MediatorOrderAdapter :
     }
 }
 
-class MediatorOrderViewHolder(view: View) : RecyclerView.ViewHolder(view) {}
+class PageOrderViewHolder(view: View) : RecyclerView.ViewHolder(view) {}

@@ -2,4 +2,8 @@
     <string name="app_name">PinsMvvm</string>
     <string name="login_success">登录成功</string>
     <string name="name_null_alert">名字不能为空</string>
+    <string name="menu_home">首页</string>
+    <string name="menu_my_doctor">我的医生</string>
+    <string name="menu_health">健康</string>
+    <string name="menu_personal_centre">个人中心</string>
 </resources>

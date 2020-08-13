@@ -1,8 +1,7 @@
-package com.example.pinsmvvm.ui.doctor
+package com.example.pinsmvvm.ui.list.doctor
 
 import android.content.Context
 import androidx.databinding.DataBindingUtil
-import androidx.recyclerview.widget.DiffUtil
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.example.pinsmvvm.R

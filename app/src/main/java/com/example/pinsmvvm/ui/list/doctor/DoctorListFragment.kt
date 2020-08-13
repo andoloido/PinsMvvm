@@ -1,4 +1,4 @@
-package com.example.pinsmvvm.ui.doctor
+package com.example.pinsmvvm.ui.list.doctor
 
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer

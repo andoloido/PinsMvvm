@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_home"
+        android:checked="true"
+        android:icon="@drawable/menu_home"
+        android:title="@string/menu_home" />
+
+    <item
+        android:id="@+id/menu_my_doctor"
+        android:icon="@drawable/menu_my_doctor"
+        android:title="@string/menu_my_doctor" />
+
+    <item
+        android:id="@+id/menu_health"
+        android:icon="@drawable/menu_health"
+        android:title="@string/menu_health" />
+    <item
+        android:id="@+id/menu_personal_centre"
+        android:icon="@drawable/menu_personal_centre"
+        android:title="@string/menu_personal_centre" />
+
+</menu>

@@ -1,4 +1,4 @@
-package com.example.pinsmvvm.ui.mediator
+package com.example.pinsmvvm.ui.list.mediator
 
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -12,7 +12,6 @@ import com.example.pinsmvvm.app.config.Setting
 import com.example.pinsmvvm.app.utils.toast
 import com.example.pinsmvvm.databinding.LayoutCommonListBinding
 import com.example.pinsmvvm.vm.OrderMediatorViewModel
-import com.example.pinsmvvm.vm.OrderPagingViewModel
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
