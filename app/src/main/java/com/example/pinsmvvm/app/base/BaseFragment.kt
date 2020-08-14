@@ -15,9 +15,7 @@ import com.example.pinsmvvm.app.utils.toast
 abstract class BaseFragment<DB : ViewDataBinding> : Fragment() {
     lateinit var mActivity: AppCompatActivity
 
-    protected var mRootView: View? = null
-
-    private var mIsHasData = false//是否加载过数据
+    private var mIsHasData = false //是否加载过数据
 
     lateinit var mBinding: DB
 
@@ -36,13 +34,10 @@ abstract class BaseFragment<DB : ViewDataBinding> : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        if (mRootView == null) {
             mBinding = DataBindingUtil.inflate(inflater, getLayoutRes(), container, false)
             // 让xml内绑定的LiveData和Observer建立连接，让LiveData能感知Activity的生命周期
             mBinding.lifecycleOwner = this
-            mRootView = mBinding.root
-        }
-        return mRootView
+        return mBinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

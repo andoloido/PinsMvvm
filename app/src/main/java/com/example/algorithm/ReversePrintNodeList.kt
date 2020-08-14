@@ -1,6 +1,6 @@
 package com.example.algorithm
 
-class Node(val value: Int) {
+class Node(var value: Int) {
     var next: Node? = null
 }
 

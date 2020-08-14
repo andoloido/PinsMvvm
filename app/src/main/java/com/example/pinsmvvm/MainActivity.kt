@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
 
     private var mExitTime = 0L
     override fun onBackPressed() {
-        findNavController(R.id.nav_host_main).currentDestination?.let {
+        findNavController(R.id.nav).currentDestination?.let {
             fun tryToFinish() {
                 if (System.currentTimeMillis() - mExitTime < 3000) {
                     finish()
@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
             }
             when (it.id) {
                 R.id.loginFragment, R.id.mainFragment -> tryToFinish()
-                else -> findNavController(R.id.nav_host_main).navigateUp()
+                else -> findNavController(R.id.nav).navigateUp()
             }
         }
     }
