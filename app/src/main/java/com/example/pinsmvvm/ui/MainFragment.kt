@@ -11,10 +11,11 @@ import com.example.pinsmvvm.ui.inquiry.InquiryMainFragment
 import com.example.pinsmvvm.ui.list.ListTestFragment
 import com.example.pinsmvvm.ui.list.order.OrderListFragment
 import com.example.pinsmvvm.ui.list.page.PageOrderFragment
+import com.example.pinsmvvm.ui.personal.PersonalCentreFragment
 import com.google.android.material.bottomnavigation.LabelVisibilityMode.LABEL_VISIBILITY_LABELED
 
 class MainFragment : BaseFragment<FragmentMainBinding>() {
-    private val fragmentList = arrayListOf<Fragment>(HomeFragment(), ListTestFragment(), InquiryMainFragment(), OrderListFragment())
+    private val fragmentList = arrayListOf<Fragment>(HomeFragment(), ListTestFragment(), InquiryMainFragment(), PersonalCentreFragment())
 
     override fun getViewModel(): BaseViewModel {
         return BaseViewModel()

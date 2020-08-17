@@ -44,6 +44,11 @@
         <action
             android:id="@+id/action_mainFragment_to_inquiryStep1Fragment"
             app:destination="@id/inquiryStep1Fragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/doctorListFragment"
