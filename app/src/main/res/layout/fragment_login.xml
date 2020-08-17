@@ -9,7 +9,6 @@
             name="loginVM"
             type="com.example.pinsmvvm.vm.LoginViewModel" />
 
-
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -34,9 +34,9 @@ abstract class BaseFragment<DB : ViewDataBinding> : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-            mBinding = DataBindingUtil.inflate(inflater, getLayoutRes(), container, false)
-            // 让xml内绑定的LiveData和Observer建立连接，让LiveData能感知Activity的生命周期
-            mBinding.lifecycleOwner = this
+        mBinding = DataBindingUtil.inflate(inflater, getLayoutRes(), container, false)
+        // 让xml内绑定的LiveData和Observer建立连接，让LiveData能感知Activity的生命周期
+        mBinding.lifecycleOwner = this
         return mBinding.root
     }
 
