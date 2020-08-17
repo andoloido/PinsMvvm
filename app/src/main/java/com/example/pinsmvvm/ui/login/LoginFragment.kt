@@ -30,7 +30,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
                 Setting.authorization = "PINSV1" + it.token
                 Setting.loginName = it.user_telephone
                 Setting.userId = it.user_id
-                findNavController().navigate(R.id.action_loginFragment_to_listTestFragment)
+                findNavController().navigate(R.id.action_loginFragment_to_mainFragment)
             })
         }
     }

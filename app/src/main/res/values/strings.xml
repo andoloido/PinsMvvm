@@ -6,4 +6,7 @@
     <string name="menu_my_doctor">我的医生</string>
     <string name="menu_health">健康</string>
     <string name="menu_personal_centre">个人中心</string>
+    <string name="enter_information_1">please enter first information</string>
+    <string name="enter_information_2">please enter second information</string>
+    <string name="enter_information_3">please enter third information</string>
 </resources>

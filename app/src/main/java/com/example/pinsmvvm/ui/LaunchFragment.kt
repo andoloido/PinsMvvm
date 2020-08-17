@@ -21,7 +21,7 @@ class LaunchFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         if (Setting.authorization.isNotEmpty()) {
-            findNavController().navigate(R.id.action_launchFragment_to_listTestFragment)
+            findNavController().navigate(R.id.action_launchFragment_to_mainFragment)
         } else {
             findNavController().navigate(R.id.action_launchFragment_to_loginFragment)
         }

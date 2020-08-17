@@ -3,15 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav"
-    app:startDestination="@id/mainFragment">
+    app:startDestination="@id/launchFragment">
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.pinsmvvm.ui.login.LoginFragment"
         android:label="LoginFragment"
         tools:layout="@layout/fragment_login">
         <action
-            android:id="@+id/action_loginFragment_to_listTestFragment"
-            app:destination="@id/listTestFragment" />
+            android:id="@+id/action_loginFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
     </fragment>
     <fragment
         android:id="@+id/launchFragment"
@@ -21,8 +21,8 @@
             android:id="@+id/action_launchFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
         <action
-            android:id="@+id/action_launchFragment_to_listTestFragment"
-            app:destination="@id/listTestFragment" />
+            android:id="@+id/action_launchFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
     </fragment>
     <fragment
         android:id="@+id/mainFragment"
@@ -41,12 +41,10 @@
         <action
             android:id="@+id/action_mainFragment_to_mediatorOrderFragment"
             app:destination="@id/mediatorOrderFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_inquiryStep1Fragment"
+            app:destination="@id/inquiryStep1Fragment" />
     </fragment>
-    <fragment
-        android:id="@+id/listTestFragment"
-        android:name="com.example.pinsmvvm.ui.list.ListTestFragment"
-        android:label="ListTestFragment"
-        tools:layout="@layout/fragment_list_test" />
     <fragment
         android:id="@+id/doctorListFragment"
         android:name="com.example.pinsmvvm.ui.list.doctor.DoctorListFragment"
@@ -67,4 +65,9 @@
         android:name="com.example.pinsmvvm.ui.list.order.OrderListFragment"
         android:label="OrderListFragment"
         tools:layout="@layout/layout_common_list" />
+    <fragment
+        android:id="@+id/inquiryStep1Fragment"
+        android:name="com.example.pinsmvvm.ui.inquiry.InquiryStep1Fragment"
+        android:label="InquiryStep1Fragment"
+        tools:layout="@layout/fragment_inquiry_step_1" />
 </navigation>
