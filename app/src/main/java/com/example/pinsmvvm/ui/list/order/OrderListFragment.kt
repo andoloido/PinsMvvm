@@ -2,6 +2,7 @@ package com.example.pinsmvvm.ui.list.order
 
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.lifecycle.observe
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.pinsmvvm.R
 import com.example.pinsmvvm.app.base.BaseFragment

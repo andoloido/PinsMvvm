@@ -2,11 +2,12 @@ package com.example.pinsmvvm.ui.login
 
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.navigation.fragment.findNavController
 import com.example.pinsmvvm.R
 import com.example.pinsmvvm.app.base.BaseFragment
 import com.example.pinsmvvm.app.base.BaseViewModel
 import com.example.pinsmvvm.app.config.Setting
+import com.example.pinsmvvm.app.utils.findNavController
+import com.example.pinsmvvm.app.utils.navigateAction
 import com.example.pinsmvvm.app.utils.toast
 import com.example.pinsmvvm.databinding.FragmentLoginBinding
 import com.example.pinsmvvm.vm.LoginViewModel
@@ -30,7 +31,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
                 Setting.authorization = "PINSV1" + it.token
                 Setting.loginName = it.user_telephone
                 Setting.userId = it.user_id
-                findNavController().navigate(R.id.action_loginFragment_to_mainFragment)
+                findNavController().navigateAction(R.id.action_loginFragment_to_mainFragment)
             })
         }
     }

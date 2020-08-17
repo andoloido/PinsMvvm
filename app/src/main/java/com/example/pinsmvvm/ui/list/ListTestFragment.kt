@@ -1,13 +1,11 @@
 package com.example.pinsmvvm.ui.list
 
-import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import com.example.pinsmvvm.R
 import com.example.pinsmvvm.app.base.BaseFragment
 import com.example.pinsmvvm.app.base.BaseViewModel
-import com.example.pinsmvvm.app.utils.SpUtil
+import com.example.pinsmvvm.app.utils.findNavController
+import com.example.pinsmvvm.app.utils.navigateAction
 import com.example.pinsmvvm.databinding.FragmentListTestBinding
-import kotlinx.android.synthetic.main.fragment_list_test.*
 
 class ListTestFragment : BaseFragment<FragmentListTestBinding>() {
 
@@ -17,16 +15,16 @@ class ListTestFragment : BaseFragment<FragmentListTestBinding>() {
 
     override fun initView() {
         mBinding.jumpToDoctorListBt.setOnClickListener {
-            findNavController().navigate(R.id.action_mainFragment_to_doctorListFragment)
+            findNavController().navigateAction(R.id.action_mainFragment_to_doctorListFragment)
         }
         mBinding.jumpToOrderListBt.setOnClickListener {
-            findNavController().navigate(R.id.action_mainFragment_to_orderListFragment)
+            findNavController().navigateAction(R.id.action_mainFragment_to_orderListFragment)
         }
         mBinding.jumpToPageOrderBt.setOnClickListener {
-            findNavController().navigate(R.id.action_mainFragment_to_pageOrderFragment)
+            findNavController().navigateAction(R.id.action_mainFragment_to_pageOrderFragment)
         }
         mBinding.jumpToMediatorOrderBt.setOnClickListener {
-            findNavController().navigate(R.id.action_mainFragment_to_mediatorOrderFragment)
+            findNavController().navigateAction(R.id.action_mainFragment_to_mediatorOrderFragment)
         }
     }
 }

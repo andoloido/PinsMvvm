@@ -5,9 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import com.example.pinsmvvm.R
 import com.example.pinsmvvm.app.config.Setting
+import com.example.pinsmvvm.app.utils.findNavController
+import com.example.pinsmvvm.app.utils.navigateAction
 
 class LaunchFragment : Fragment() {
     override fun onCreateView(
@@ -21,9 +22,9 @@ class LaunchFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         if (Setting.authorization.isNotEmpty()) {
-            findNavController().navigate(R.id.action_launchFragment_to_mainFragment)
+            findNavController().navigateAction(R.id.action_launchFragment_to_mainFragment)
         } else {
-            findNavController().navigate(R.id.action_launchFragment_to_loginFragment)
+            findNavController().navigateAction(R.id.action_launchFragment_to_loginFragment)
         }
     }
 }

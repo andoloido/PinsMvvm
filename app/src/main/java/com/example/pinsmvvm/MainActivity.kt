@@ -3,7 +3,8 @@ package com.example.pinsmvvm
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
-import androidx.navigation.findNavController
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.NavHostFragment
 import com.example.pinsmvvm.app.utils.toast
 import com.example.pinsmvvm.databinding.ActivityMainBinding
 
@@ -15,7 +16,7 @@ class MainActivity : AppCompatActivity() {
 
     private var mExitTime = 0L
     override fun onBackPressed() {
-        findNavController(R.id.nav).currentDestination?.let {
+        Navigation.findNavController(this, R.id.nav).currentDestination?.let {
             fun tryToFinish() {
                 if (System.currentTimeMillis() - mExitTime < 3000) {
                     finish()
@@ -26,7 +27,7 @@ class MainActivity : AppCompatActivity() {
             }
             when (it.id) {
                 R.id.loginFragment, R.id.mainFragment -> tryToFinish()
-                else -> findNavController(R.id.nav).navigateUp()
+                else -> Navigation.findNavController(this, R.id.nav).navigateUp()
             }
         }
     }
