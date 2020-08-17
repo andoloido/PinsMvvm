@@ -1,19 +1,20 @@
 package com.example.pinsmvvm.ui
 
 import androidx.fragment.app.Fragment
-import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.pinsmvvm.R
 import com.example.pinsmvvm.app.base.BaseFragment
 import com.example.pinsmvvm.app.base.BaseViewModel
+import com.example.pinsmvvm.app.utils.init
 import com.example.pinsmvvm.databinding.FragmentMainBinding
 import com.example.pinsmvvm.ui.home.HomeFragment
 import com.example.pinsmvvm.ui.list.ListTestFragment
-import com.example.pinsmvvm.ui.list.mediator.MediatorOrderFragment
 import com.example.pinsmvvm.ui.list.order.OrderListFragment
 import com.example.pinsmvvm.ui.list.page.PageOrderFragment
 import com.google.android.material.bottomnavigation.LabelVisibilityMode.LABEL_VISIBILITY_LABELED
 
 class MainFragment : BaseFragment<FragmentMainBinding>() {
+    private val fragmentList = arrayListOf<Fragment>(HomeFragment(), ListTestFragment(), PageOrderFragment(), OrderListFragment())
+
     override fun getViewModel(): BaseViewModel {
         return BaseViewModel()
     }
@@ -28,26 +29,8 @@ class MainFragment : BaseFragment<FragmentMainBinding>() {
     }
 
     private fun initViewPager() {
-        mBinding.mainViewpager.apply {
-            this.isUserInputEnabled = false
-            this.offscreenPageLimit = mBinding.mainBottom.itemCount
-
-            adapter = object : FragmentStateAdapter(this@MainFragment) {
-                override fun getItemCount(): Int {
-                    return mBinding.mainBottom.itemCount
-                }
-
-                override fun createFragment(position: Int): Fragment {
-                    return when (position) {
-                        0 -> HomeFragment()
-                        1 -> ListTestFragment()
-                        2 -> PageOrderFragment()
-                        3 -> OrderListFragment()
-                        else -> HomeFragment()
-                    }
-                }
-            }
-        }
+        mBinding.mainViewpager.init(this, fragmentList, false)
+        mBinding.mainViewpager.offscreenPageLimit = fragmentList.size
     }
 
     private fun initBottomNavigationView() {

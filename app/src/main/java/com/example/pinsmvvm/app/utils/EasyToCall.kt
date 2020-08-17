@@ -51,6 +51,7 @@ fun MagicIndicator.bindViewPager2(
     action: (index: Int) -> Unit = {}
 ) {
     val commonNavigator = CommonNavigator(App.application)
+    commonNavigator.isAdjustMode = true
     commonNavigator.adapter = object : CommonNavigatorAdapter() {
         override fun getCount(): Int {
             return titleList.size
@@ -82,6 +83,10 @@ fun MagicIndicator.bindViewPager2(
                 //线条的颜色
                 setColors(context.getColor(R.color.colorPrimary))
             }
+        }
+
+        override fun getTitleWeight(context: Context?, index: Int): Float {
+            return 1.0f
         }
     }
     this.navigator = commonNavigator
