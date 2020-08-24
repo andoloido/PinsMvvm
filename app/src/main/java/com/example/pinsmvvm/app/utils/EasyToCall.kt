@@ -27,7 +27,7 @@ const val DELAY_MILLIS = 500L
 /**
  * avoid invoke navigate several times during a short time
  */
-fun NavController.navigateAction(action: Int, bundle: Bundle? = null) {
+fun NavController.actionNav(action: Int, bundle: Bundle? = null) {
     val currentTimeMillis = System.currentTimeMillis()
     if (currentTimeMillis >= previousClickTimeMillis + DELAY_MILLIS) {
         previousClickTimeMillis = currentTimeMillis

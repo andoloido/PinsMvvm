@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import com.example.pinsmvvm.R
 import com.example.pinsmvvm.app.config.Setting
 import com.example.pinsmvvm.app.utils.findNavController
-import com.example.pinsmvvm.app.utils.navigateAction
+import com.example.pinsmvvm.app.utils.actionNav
 
 class LaunchFragment : Fragment() {
     override fun onCreateView(
@@ -22,9 +22,9 @@ class LaunchFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         if (Setting.authorization.isNotEmpty()) {
-            findNavController().navigateAction(R.id.action_launchFragment_to_mainFragment)
+            findNavController().actionNav(R.id.action_launchFragment_to_mainFragment)
         } else {
-            findNavController().navigateAction(R.id.action_launchFragment_to_loginFragment)
+            findNavController().actionNav(R.id.action_launchFragment_to_loginFragment)
         }
     }
 }

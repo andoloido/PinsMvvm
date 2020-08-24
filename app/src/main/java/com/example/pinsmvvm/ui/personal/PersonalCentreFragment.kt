@@ -5,7 +5,7 @@ import com.example.pinsmvvm.app.base.BaseFragment
 import com.example.pinsmvvm.app.base.BaseViewModel
 import com.example.pinsmvvm.app.utils.SpUtil
 import com.example.pinsmvvm.app.utils.findNavController
-import com.example.pinsmvvm.app.utils.navigateAction
+import com.example.pinsmvvm.app.utils.actionNav
 import com.example.pinsmvvm.databinding.FragmentPersonalCentreBinding
 
 class PersonalCentreFragment : BaseFragment<FragmentPersonalCentreBinding>() {
@@ -21,7 +21,7 @@ class PersonalCentreFragment : BaseFragment<FragmentPersonalCentreBinding>() {
         mBinding.run {
             logoutBt.setOnClickListener {
                 SpUtil.clear()
-                findNavController().navigateAction(R.id.action_mainFragment_to_loginFragment)
+                findNavController().actionNav(R.id.action_mainFragment_to_loginFragment)
             }
         }
     }

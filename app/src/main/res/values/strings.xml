@@ -9,4 +9,5 @@
     <string name="enter_information_1">please enter first information</string>
     <string name="enter_information_2">please enter second information</string>
     <string name="enter_information_3">please enter third information</string>
+    <string name="next_step">next step</string>
 </resources>

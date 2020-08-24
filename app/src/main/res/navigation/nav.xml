@@ -74,5 +74,14 @@
         android:id="@+id/inquiryStep1Fragment"
         android:name="com.example.pinsmvvm.ui.inquiry.InquiryStep1Fragment"
         android:label="InquiryStep1Fragment"
-        tools:layout="@layout/fragment_inquiry_step_1" />
+        tools:layout="@layout/fragment_inquiry_step_1">
+        <action
+            android:id="@+id/action_inquiryStep1Fragment_to_inquiryStep2Fragment"
+            app:destination="@id/inquiryStep2Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/inquiryStep2Fragment"
+        android:name="com.example.pinsmvvm.ui.inquiry.InquiryStep2Fragment"
+        android:label="InquiryStep2Fragment"
+        tools:layout="@layout/fragment_inquiry_step_2" />
 </navigation>
