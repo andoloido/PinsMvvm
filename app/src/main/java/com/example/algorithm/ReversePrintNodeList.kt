@@ -1,7 +1,9 @@
 package com.example.algorithm
 
 class Node(var value: Int) {
+    var before: Node? = null
     var next: Node? = null
+    var randow: Node? = null
 }
 
 fun main() {
