@@ -58,7 +58,7 @@ abstract class BaseFragment<DB : ViewDataBinding> : Fragment() {
     }
 
     private fun initViewModelAction() {
-        this.getViewModel().let { baseViewModel ->
+        this.getViewModel()?.let { baseViewModel ->
             baseViewModel.mStateLiveData.observe(this, Observer { stateActionState ->
                 when (stateActionState) {
                     RequestState -> showLoading()
@@ -74,7 +74,7 @@ abstract class BaseFragment<DB : ViewDataBinding> : Fragment() {
         }
     }
 
-    abstract fun getViewModel(): BaseViewModel
+    open fun getViewModel(): BaseViewModel? = null
 
     abstract fun getLayoutRes(): Int
 
