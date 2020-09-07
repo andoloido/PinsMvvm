@@ -60,9 +60,8 @@ dependencies {
     implementation "androidx.room:room-ktx:2.3.0-alpha02"
     kapt "androidx.room:room-compiler:2.3.0-alpha02"
 
-    //navigation 重写navigator改replace为show hide
-    implementation 'androidx.navigation:navigation-runtime:2.3.0'
-    implementation 'com.kunminx.archi:smooth-navigation:2.9.7-beta4'
+    implementation "androidx.navigation:navigation-fragment-ktx:2.3.0"
+    implementation "androidx.navigation:navigation-ui-ktx:2.3.0"
 
     //图片加载
     implementation "com.github.bumptech.glide:glide:4.11.0"

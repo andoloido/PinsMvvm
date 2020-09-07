@@ -35,7 +35,7 @@ fun maxValueInPresents2(arr: ArrayList<ArrayList<Int>>): Int {
     if (arr.isEmpty()) return 0
     val row = arr.size
     val col = arr[0].size
-    val maxArr = ArrayList<Int>(initialCapacity = col)
+    val maxArr = ArrayList<Int>()
     for (i in 0 until row) {
         for (j in 1 until col) {
             var top = 0

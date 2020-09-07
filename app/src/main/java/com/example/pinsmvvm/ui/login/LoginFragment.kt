@@ -21,6 +21,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
     override fun getLayoutRes(): Int = R.layout.fragment_login
 
     override fun initView() {
+        mBinding.loginVM = mViewModel
         loginBt.setOnClickListener {
             if (mViewModel.name.get().isNullOrEmpty()) {
                 toast(getString(R.string.name_null_alert))
@@ -34,9 +35,5 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
                 findNavController().actionNav(R.id.action_loginFragment_to_mainFragment)
             })
         }
-    }
-
-    override fun initData() {
-        mBinding.loginVM = mViewModel
     }
 }

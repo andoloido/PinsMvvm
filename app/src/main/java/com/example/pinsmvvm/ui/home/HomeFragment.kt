@@ -10,9 +10,9 @@ import com.example.pinsmvvm.databinding.FragmentHomeBinding
 import com.example.pinsmvvm.ui.list.mediator.MediatorOrderFragment
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>() {
-    private var mFragmentList: ArrayList<Fragment> = arrayListOf()
+    private var mFragmentList: ArrayList<Fragment> = arrayListOf(MediatorOrderFragment(), MediatorOrderFragment(), MediatorOrderFragment(), MediatorOrderFragment(), MediatorOrderFragment())
 
-    private var mTitleList: ArrayList<String> = arrayListOf()
+    private var mTitleList: ArrayList<String> = arrayListOf("全部", "待付款", "进行中", "已完成", "已取消")
 
     override fun getViewModel(): BaseViewModel {
         return BaseViewModel()
@@ -28,11 +28,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
             viewPager.init(this@HomeFragment, mFragmentList)
             magicIndicator.bindViewPager2(viewPager, mTitleList)
         }
-    }
-
-    override fun initData() {
-        mFragmentList.addAll(arrayListOf(MediatorOrderFragment(), MediatorOrderFragment(), MediatorOrderFragment(), MediatorOrderFragment(), MediatorOrderFragment()))
-        mTitleList.addAll(arrayListOf("全部", "待付款", "进行中", "已完成", "已取消"))
         mBinding.run {
             magicIndicator.navigator.notifyDataSetChanged()
             viewPager.adapter?.notifyDataSetChanged()
