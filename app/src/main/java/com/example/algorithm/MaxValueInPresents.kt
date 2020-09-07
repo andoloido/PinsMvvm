@@ -6,7 +6,7 @@ fun maxValueInPresents(arr: ArrayList<ArrayList<Int>>): Int {
     if (arr.isEmpty()) return 0
     val row = arr.size
     val col = arr[0].size
-    val maxArr: ArrayList<ArrayList<Int>> = ArrayList<ArrayList<Int>>(initialCapacity = row)
+    val maxArr: ArrayList<ArrayList<Int>> = ArrayList()
     for (i in 0 until row) {
         maxArr.add(ArrayList())
     }
