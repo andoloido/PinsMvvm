@@ -3,6 +3,7 @@ package com.example.pinsmvvm
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.SavedStateViewModelFactory
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.NavHostFragment
 import com.example.pinsmvvm.app.utils.toast
@@ -22,7 +23,7 @@ class MainActivity : AppCompatActivity() {
                     finish()
                 } else {
                     mExitTime = System.currentTimeMillis()
-                    toast("双击退出应用")
+                    toast(getString(R.string.exit_application_alert))
                 }
             }
             when (it.id) {

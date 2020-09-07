@@ -10,4 +10,5 @@
     <string name="enter_information_2">please enter second information</string>
     <string name="enter_information_3">please enter third information</string>
     <string name="next_step">next step</string>
+    <string name="exit_application_alert">双击退出应用</string>
 </resources>
