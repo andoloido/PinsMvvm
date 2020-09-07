@@ -1,5 +1,8 @@
 package com.example.pinsmvvm.app.network
 
+/**
+ * 网络请求response统一封装
+ */
 data class HttpResponse<T>(
     val error_code: Int,
     val status_code: Int,

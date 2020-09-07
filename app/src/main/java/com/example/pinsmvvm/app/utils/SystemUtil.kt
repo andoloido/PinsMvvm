@@ -22,5 +22,4 @@ object SystemUtil {
 
     @SuppressLint("HardwareIds")
     fun getAndroidId(): String? = Secure.getString(application.contentResolver, Secure.ANDROID_ID)
-
 }

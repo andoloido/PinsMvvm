@@ -1,4 +1,4 @@
-package com.example.pinsmvvm.app.base
+package com.example.pinsmvvm.app.config
 
 object Constant {
 

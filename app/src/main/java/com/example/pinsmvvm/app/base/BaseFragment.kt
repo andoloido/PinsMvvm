@@ -85,6 +85,4 @@ abstract class BaseFragment<DB : ViewDataBinding> : Fragment() {
     open fun showLoading() {}
 
     open fun dismissLoading() {}
-
-    open fun handleError() {}
 }

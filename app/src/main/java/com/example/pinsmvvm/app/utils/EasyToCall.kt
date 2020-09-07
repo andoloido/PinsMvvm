@@ -23,13 +23,13 @@ fun Fragment.findNavController(): NavController {
 }
 
 var previousClickTimeMillis = 0L
-const val DELAY_MILLIS = 500L
+const val NAV_DELAY_MILLIS = 500L
 /**
  * avoid invoke navigate several times during a short time
  */
 fun NavController.actionNav(action: Int, bundle: Bundle? = null) {
     val currentTimeMillis = System.currentTimeMillis()
-    if (currentTimeMillis >= previousClickTimeMillis + DELAY_MILLIS) {
+    if (currentTimeMillis >= previousClickTimeMillis + NAV_DELAY_MILLIS) {
         previousClickTimeMillis = currentTimeMillis
         navigate(action, bundle)
     }

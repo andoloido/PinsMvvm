@@ -2,7 +2,7 @@ package com.example.pinsmvvm.app.network
 
 import android.util.Log
 import com.example.pinsmvvm.BuildConfig
-import com.example.pinsmvvm.app.base.Constant
+import com.example.pinsmvvm.app.config.Constant
 import com.example.pinsmvvm.app.config.Setting.authorization
 import com.example.pinsmvvm.app.config.Setting.deviceId
 import com.example.pinsmvvm.app.network.interceptors.HeaderInterceptor
