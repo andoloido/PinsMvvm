@@ -17,10 +17,6 @@ import com.google.android.material.bottomnavigation.LabelVisibilityMode.LABEL_VI
 class MainFragment : BaseFragment<FragmentMainBinding>() {
     private val fragmentList = arrayListOf<Fragment>(HomeFragment(), ListTestFragment(), InquiryMainFragment(), PersonalCentreFragment())
 
-    override fun getViewModel(): BaseViewModel {
-        return BaseViewModel()
-    }
-
     override fun getLayoutRes(): Int {
         return R.layout.fragment_main
     }

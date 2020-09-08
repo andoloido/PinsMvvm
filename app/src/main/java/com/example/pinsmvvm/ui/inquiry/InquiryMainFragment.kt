@@ -8,9 +8,6 @@ import com.example.pinsmvvm.app.utils.actionNav
 import com.example.pinsmvvm.databinding.FragmentInquiryMainBinding
 
 class InquiryMainFragment : BaseFragment<FragmentInquiryMainBinding>() {
-    override fun getViewModel(): BaseViewModel {
-        return BaseViewModel()
-    }
 
     override fun getLayoutRes(): Int {
         return R.layout.fragment_inquiry_main

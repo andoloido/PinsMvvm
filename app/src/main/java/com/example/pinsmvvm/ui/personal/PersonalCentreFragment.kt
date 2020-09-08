@@ -9,9 +9,6 @@ import com.example.pinsmvvm.app.utils.actionNav
 import com.example.pinsmvvm.databinding.FragmentPersonalCentreBinding
 
 class PersonalCentreFragment : BaseFragment<FragmentPersonalCentreBinding>() {
-    override fun getViewModel(): BaseViewModel {
-        return BaseViewModel()
-    }
 
     override fun getLayoutRes(): Int {
         return R.layout.fragment_personal_centre

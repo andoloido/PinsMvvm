@@ -14,10 +14,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
     private var mTitleList: ArrayList<String> = arrayListOf("全部", "待付款", "进行中", "已完成", "已取消")
 
-    override fun getViewModel(): BaseViewModel {
-        return BaseViewModel()
-    }
-
     override fun getLayoutRes(): Int {
         return R.layout.fragment_home
     }
