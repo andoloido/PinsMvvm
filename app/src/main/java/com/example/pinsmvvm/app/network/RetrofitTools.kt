@@ -1,5 +1,6 @@
 package com.example.pinsmvvm.app.network
 
+import com.example.pinsmvvm.data.network.AddressService
 import com.example.pinsmvvm.data.network.DoctorService
 import com.example.pinsmvvm.data.network.LoginService
 import com.example.pinsmvvm.data.network.OrderService
@@ -33,4 +34,8 @@ val doctorService: DoctorService by lazy(mode = LazyThreadSafetyMode.SYNCHRONIZE
 
 val orderService: OrderService by lazy(mode = LazyThreadSafetyMode.SYNCHRONIZED) {
     RetrofitTools.getApi(OrderService::class.java)
+}
+
+val addressService: AddressService by lazy(mode = LazyThreadSafetyMode.SYNCHRONIZED) {
+    RetrofitTools.getApi(AddressService::class.java)
 }

@@ -20,6 +20,9 @@ class PersonalCentreFragment : BaseFragment<FragmentPersonalCentreBinding>() {
                 SpUtil.clear()
                 findNavController().actionNav(R.id.action_mainFragment_to_loginFragment)
             }
+            addressBt.setOnClickListener {
+                findNavController().actionNav(R.id.action_mainFragment_to_addressListFragment)
+            }
         }
     }
 }

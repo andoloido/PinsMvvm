@@ -49,6 +49,9 @@
             app:destination="@id/loginFragment"
             app:popUpTo="@id/loginFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_mainFragment_to_addressListFragment"
+            app:destination="@id/addressListFragment" />
     </fragment>
     <fragment
         android:id="@+id/doctorListFragment"
@@ -84,4 +87,9 @@
         android:name="com.example.pinsmvvm.ui.inquiry.InquiryStep2Fragment"
         android:label="InquiryStep2Fragment"
         tools:layout="@layout/fragment_inquiry_step_2" />
+    <fragment
+        android:id="@+id/addressListFragment"
+        tools:layout="@layout/fragment_address_list"
+        android:name="com.example.pinsmvvm.ui.address.AddressListFragment"
+        android:label="AddressListFragment" />
 </navigation>
