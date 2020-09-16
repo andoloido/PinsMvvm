@@ -1,5 +1,6 @@
 package com.example.pinsmvvm.data.repo
 
+import com.example.pinsmvvm.app.config.Setting
 import com.example.pinsmvvm.app.network.HttpResponse
 import com.example.pinsmvvm.app.network.addressService
 import com.example.pinsmvvm.app.network.orderService
@@ -21,16 +22,9 @@ class AddressRepo(private val addressService: AddressService) {
             }
     }
 
-    suspend fun getOrderList(
-        patientId: String,
-        createDate: Long? = null
-    ): HttpResponse<List<AddressBean>> {
+    suspend fun getAddressList(): HttpResponse<List<AddressBean>> {
         val map = hashMapOf<String, Any>()
-        map["patient_id"] = patientId
-        map["type"] = 0
-        map["size"] = 10
-        map["module"] = 501
-        createDate?.run { map["createdate"] = this }
+        map["patient_id"] = Setting.userId
         return addressService.getAddressList(map)
     }
 }
